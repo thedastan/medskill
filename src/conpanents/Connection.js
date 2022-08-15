@@ -37,16 +37,16 @@ const Connection = () => {
                                     Ахунбаева 2/1</p>
                             </a>
                             <div  className="connection__our__contact__logos">
-                                <a href=" https://wa.me/+996501482929">     <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 27" fill="none"
+                                <a href=" https://wa.me/+996701103163">     <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 27" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="evenodd" clipRule="evenodd"
                                           d="M0.140695 26.3104C0.0256677 26.7146 0.405951 27.0877 0.82498 26.9818L7.30249 25.3439C9.34719 26.4161 11.6492 26.9856 13.9931 26.9856H14C21.7128 26.9856 28 20.9345 28 13.4962C28 9.891 26.5463 6.50014 23.9036 3.95364C21.2608 1.40725 17.7486 0 13.9999 0C6.28719 0 8.91747e-07 6.05116 8.91747e-07 13.4895C-0.000875557 15.8559 0.644322 18.1808 1.87082 20.2309L0.140695 26.3104ZM9.56281 7.03626C9.82004 7.04294 10.1052 7.0564 10.3765 7.63944C10.5565 8.02757 10.8595 8.7421 11.1064 9.32416C11.2986 9.7771 11.4566 10.1498 11.4962 10.2261C11.5866 10.4003 11.6423 10.6013 11.524 10.8358C11.5101 10.8635 11.4969 10.8899 11.4843 10.9154C11.3894 11.106 11.3219 11.2415 11.1624 11.4189C11.0968 11.4917 11.0285 11.5716 10.9605 11.6513C10.8408 11.7913 10.7218 11.9304 10.6199 12.0287C10.4391 12.2028 10.2513 12.3906 10.4599 12.739C10.6686 13.0874 11.3989 14.2334 12.4769 15.1581C13.6358 16.157 14.6436 16.5779 15.153 16.7907C15.2519 16.832 15.332 16.8655 15.3908 16.8938C15.7525 17.068 15.9681 17.0412 16.1767 16.8067C16.3855 16.5721 17.0809 15.788 17.3243 15.4396C17.5608 15.0912 17.8042 15.1448 18.1381 15.2654C18.4718 15.386 20.2523 16.2303 20.6139 16.4045C20.6854 16.439 20.7522 16.47 20.8142 16.4988C21.0658 16.6156 21.2368 16.695 21.3094 16.8133C21.3998 16.9607 21.3998 17.6577 21.1007 18.4752C20.7948 19.2928 19.3203 20.0768 18.6526 20.1371C18.5894 20.1429 18.5265 20.1503 18.4618 20.1578C17.8499 20.2295 17.0732 20.3204 14.3059 19.266C10.896 17.9679 8.64513 14.7472 8.19005 14.096C8.15413 14.0446 8.12939 14.0092 8.11616 13.9921L8.10847 13.9821C7.90143 13.7139 6.63477 12.0732 6.63477 10.3803C6.63477 8.76063 7.45894 7.9174 7.83487 7.53279C7.85869 7.50842 7.88071 7.48588 7.90061 7.46511C8.23439 7.1167 8.62394 7.02959 8.86731 7.02959C9.11081 7.02959 9.35418 7.02959 9.56281 7.03626Z"
                                           fill="#00A1B4"/>
                                 </svg></a>
 
-                                <a href=" https://wa.me/+996501482929 " className="connection__our__contact__logos__titles">Наш WhatsApp</a>
+                                <a href=" https://wa.me/+996701103163 " className="connection__our__contact__logos__titles">Наш WhatsApp</a>
                             </div>
-                            <a href="https://www.instagram.com/rolan_kg_/" className="connection__our__contact__logos">
+                            <a href="https://www.instagram.com/med.skill.kg/" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 28" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -66,11 +66,11 @@ const Connection = () => {
                                 </button>
                             </a>
                         </div>
-                        <iframe className="connection__our__google"
-                                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5848.508298798211!2d74.5708881!3d42.8674796!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2skg!4v1660320338821!5m2!1sru!2skg"
+                        <iframe
+                            className="connection__our__google"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5850.884516196979!2d74.63003100000002!3d42.842394!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb6664b49e4d9%3A0x6122b0a162bdd09b!2zMiwgMSDRg9C7LiDQkNGF0YPQvdCx0LDQtdCy0LAsINCR0LjRiNC60LXQuiwg0JrQuNGA0LPQuNC30LjRjw!5e0!3m2!1sru!2sus!4v1660545346749!5m2!1sru!2sus"
                                 allowFullScreen="" loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"></iframe>
-
+                            referrerPolicy="no-referrer-when-downgrade"></iframe>
                         <div className="connection__our__">
 
                         </div>

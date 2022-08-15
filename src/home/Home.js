@@ -7,7 +7,7 @@ import Footer from "../conpanents/Footer";
 const Home = () => {
     return (
         <div>
-            <Hero/>
+             <Hero/>
             <Card/>
             <Connection/>
         <Footer/>

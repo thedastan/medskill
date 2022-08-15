@@ -59,14 +59,15 @@
 
     &__img {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+       justify-content: center;
 
       &__circle {
         position: absolute;
         width: 600px;
         height: 600px;
         margin-left: -30px;
+        margin-top: -90px;
         animation: circleKey 8s linear infinite;
       }
 
@@ -75,6 +76,10 @@
         width: 600px;
         margin-left: -100px;
         animation: ambulanceKey 1.5s linear 1;
+        &__car{
+          position: absolute;
+          width: 600px;
+        }
       }
 
     }
@@ -441,3 +446,58 @@
   margin-left: -50px;
 }
 
+.flasher {
+  position: absolute;
+  margin-left: 170px;
+  margin-top: 10px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.Flasher {
+  width: 70px;
+  height: 19px;
+  background: rgba(0, 0, 187, 0.87);
+  filter: blur(8px);
+  border-radius: 9px;
+  animation: flasher23 0.4s linear infinite ;
+   opacity: -1;
+}
+
+.Flasher2 {
+  width: 90px;
+  height: 19px;
+  background: rgba(0, 0, 187, 0.86);
+  filter: blur(8px);
+  border-radius: 9px;
+  animation: flasher232 0.5s linear infinite;
+  opacity: -1;
+
+}
+
+@keyframes flasher23 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: -1
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flasher232 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: -1
+  }
+  100% {
+    opacity: 1;
+  }
+}

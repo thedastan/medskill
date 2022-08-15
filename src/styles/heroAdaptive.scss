@@ -7,6 +7,10 @@
     width: 444px;
     margin-left: 9px;
     margin-top: 102px;
+&__car{
+  width: 444px;
+  margin-top: 50px;
+}
     @keyframes ambulanceKey {
       from {
         margin-left: 900px;
@@ -15,6 +19,17 @@
         margin-left: 9px;
       }
     }
+  }
+  .flasher{
+    margin-left: 133px;
+    margin-top: 54px;
+    width: 142px;
+  }
+  .Flasher2{
+    width: 60px;
+  }
+  .Flasher{
+    width: 50px;
   }
   #hero .hero__img__circle {
     width: 435px;
@@ -80,12 +95,15 @@
     display: flex;
     justify-content: center;
   }
-  #connection .connection__our {
 
-  }
   #hero .hero__img__ambulance {
     width: 321px;
     margin-left: -75px;
+    &__car{
+      width: 261px;
+      margin-left: 23px;
+      margin-top: 112px;
+    }
     @keyframes ambulanceKey {
       from {
         margin-left: 900px;
@@ -95,11 +113,17 @@
       }
     }
   }
-  #hero .hero__img__circle {
-    width: 300px;
-    height: 300px;
-    margin-left: -18px;
+  .flasher {
+    margin-left: 100px;
+    margin-top: 110px;
+    width: 86px;
+  }
 
+  #hero .hero__img__circle {
+    width: 265px;
+    height: 265px;
+    margin-left: -18px;
+    margin-top: 157px;
   }
 
   #connection .connection__our__pro {
@@ -136,8 +160,11 @@ display: none;
     background: url("../img/Rectangle 9.png") no-repeat center/cover;
   }
   #hero .hero__img__circle {
-    display: none;
-  }
+    width: 300px;
+    height: 300px;
+    margin-left: -226px;
+    margin-top: 247px;
+   }
   #hero .hero__title__btn {
     margin: 250px 0 50px 0;
   }
@@ -146,6 +173,11 @@ display: none;
     width: 428px;
     margin-left: -285px;
     margin-top: 108px;
+    &__car{
+      width: 327px;
+      margin-left: -57px;
+      margin-top: 172px;
+    }
     @keyframes ambulanceKey {
       from {
         margin-left: 900px;
@@ -155,20 +187,26 @@ display: none;
       }
     }
   }
+.flasher{
+  margin-left: 35px;
+  margin-top: 169px;
+  width: 121px;
+}
+
   #footer .footer{
     flex-direction: column;
   }
 }
 @media (max-width: 540px) {
   .container{
-    padding: 49px;
+     padding: 0 49px 0 49px;
   }
 }
 @media (max-width: 450px) {
   .container{
     overflow: hidden;
-    padding: 40px;
-   }
+     padding: 0 40px 0 40px;
+  }
   #card .card__MinCard__cards {
  display: none;
   }
@@ -186,6 +224,10 @@ display: none;
   }
   #hero .hero__img__ambulance {
     margin-top: 145px;
+  }
+  #hero .hero__img__circle {
+    margin-left: -188px;
+    margin-top: 280px;
   }
   #hero .hero__title__btn {
     margin: 304px 0 50px 0;
@@ -209,21 +251,22 @@ display: none;
 }
 @media (max-width: 425px) {
 
-
-
   #hero .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
+  #hero .hero__img__circle {
+    margin-left: 0;
+    margin-top: -415px;
+  }
   #hero .hero__title__row {
     margin-left: 62px;
   }
 
   #hero .hero__title__btn {
-    margin: 309px 0 50px 63px;
+    margin: 315px 0 25px 63px;
   }
   #hero .hero__img__ambulance {
      position: relative;
@@ -271,6 +314,12 @@ display: none;
   .container{
      padding: 35px;
    }
+  #hero .hero__img__ambulance__car {
+    margin-left: -23px;
+  }
+  .flasher {
+    margin-left: 67px;
+  }
 }
 @media (max-width: 375px) {
   .container{
@@ -280,6 +329,25 @@ display: none;
 @media (max-width: 360px) {
   .container{
     padding: 32px;
+  }
+  #hero .hero__img__ambulance__car {
+    width: 286px;
+    margin-left: -16px;
+    margin-top: 172px;
+  }
+  .flasher {
+    margin-left: 64px;
+    width: 107px;
+  }
+  .Flasher {
+    width: 40px;
+  }
+  .Flasher2 {
+    width: 48px;
+  }
+  #hero .hero__img__circle {
+    width: 270px;
+    height: 270px;
   }
 }
 @media (max-width: 320px) {
