@@ -238,6 +238,11 @@
     position: relative;
   }
 }
+@media (max-width: 428px) {
+  #hero .hero__img__circle {
+    margin-left: -243px;
+  }
+}
 @media (max-width: 425px) {
   #hero .hero {
     display: flex;
@@ -268,6 +273,9 @@
     to {
       margin-left: 123px;
     }
+  }
+  #hero .hero__img__ambulance__car {
+    margin-left: -27px;
   }
   #card .card__Title {
     font-size: 15px;
