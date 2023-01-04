@@ -12,7 +12,7 @@ const Connection = () => {
                         <div className="connection__our__pro"></div>
                         <div className="connection__our__contact" data-aos="flip-right"  >
                             <div   className="connection__our__contact__logos">
-                                <a href="tel:+996701103163">
+                                <a href="tel:+996700333636">
                                     <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 27" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -21,10 +21,10 @@ const Connection = () => {
                                     </svg>
                                 </a>
 
-                                <a className="connection__our__contact__logos__title" href="tel:+996701103163 ">+996 (701) 103 163</a>
+                                <a className="connection__our__contact__logos__title" href="tel:+996700333636 ">+996 (700) 333 636</a>
                             </div>
                             <div   className="connection__our__contact__logos">
-                                <a href="tel:+996555 63 22 21">
+                                <a href="tel:+996700333636">
                                     <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 27" fill="none"
                                          xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -33,7 +33,7 @@ const Connection = () => {
                                     </svg>
                                 </a>
 
-                                <a className="connection__our__contact__logos__title" href="tel:+996555 63 22 21 ">+996 (555) 63 22 21</a>
+                                <a className="connection__our__contact__logos__title" href="tel:+996700333636 ">+996 (700) 333 636</a>
                             </div>
                             <a href="https://www.google.com/maps/place/2+%D1%83%D0%BB.+%D0%90%D1%85%D1%83%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.841181,74.6298258,17z/data=!3m1!4b1!4m5!3m4!1s0x389eb66691f68657:0xf750797880b0316f!8m2!3d42.841181!4d74.6320145" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg2" viewBox="0 0 28 34" fill="none"
@@ -68,9 +68,9 @@ const Connection = () => {
                                           d="M6.03373 0.439472C11.2854 -0.146491 16.7146 -0.146491 21.9663 0.439472C24.8576 0.762081 27.1897 3.03639 27.5291 5.93301C28.157 11.2927 28.157 16.7073 27.5291 22.067C27.1897 24.9636 24.8576 27.2379 21.9663 27.5605C16.7146 28.1465 11.2854 28.1465 6.03373 27.5605C3.14238 27.2379 0.810299 24.9636 0.470943 22.067C-0.156981 16.7073 -0.156981 11.2927 0.470943 5.93301C0.810299 3.03639 3.14238 0.762081 6.03373 0.439472ZM21.6152 4.87707C20.7741 4.87707 20.0922 5.55781 20.0922 6.39756C20.0922 7.2373 20.7741 7.91805 21.6152 7.91805C22.4564 7.91805 23.1383 7.2373 23.1383 6.39756C23.1383 5.55781 22.4564 4.87707 21.6152 4.87707ZM6.7655 14C6.7655 10.0112 10.0045 6.77768 14 6.77768C17.9955 6.77768 21.2345 10.0112 21.2345 14C21.2345 17.9888 17.9955 21.2223 14 21.2223C10.0045 21.2223 6.7655 17.9888 6.7655 14Z"
                                           fill="#00A1B4"/>
                                 </svg>
-                                <a href="https://www.instagram.com/rolan_kg_/ " className="connection__our__contact__logos__titles">Наш Instagram</a>
+                                <a href="https://www.instagram.com/med.skill.kg/ " className="connection__our__contact__logos__titles">Наш Instagram</a>
                             </a>
-                            <a href="tel:+996501482929" style={{width: "100%", display: "flex", justifyContent: "center",textDecoration:"none"}}>
+                            <a href="tel:+996700333636" style={{width: "100%", display: "flex", justifyContent: "center",textDecoration:"none"}}>
 
                                 <button className="connection__our__contact__btn">
                                     <a className="connection__our__contact__btn__a "
