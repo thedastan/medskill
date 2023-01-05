@@ -21,7 +21,7 @@ const Connection = () => {
                                     </svg>
                                 </a>
 
-                                <a className="connection__our__contact__logos__title" href="tel:+996700333636 ">+996 (700) 333 636</a>
+                                <a className="connection__our__contact__logos__title" href="tel:+996552333636 ">+996 (552) 33 36 36</a>
                             </div>
                             <div   className="connection__our__contact__logos">
                                 <a href="tel:+996700333636">
@@ -33,7 +33,7 @@ const Connection = () => {
                                     </svg>
                                 </a>
 
-                                <a className="connection__our__contact__logos__title" href="tel:+996700333636 ">+996 (700) 333 636</a>
+                                <a className="connection__our__contact__logos__title" href="tel:+996700333636">+996 (700) 333 636</a>
                             </div>
                             <a href="https://www.google.com/maps/place/2+%D1%83%D0%BB.+%D0%90%D1%85%D1%83%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.841181,74.6298258,17z/data=!3m1!4b1!4m5!3m4!1s0x389eb66691f68657:0xf750797880b0316f!8m2!3d42.841181!4d74.6320145" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg2" viewBox="0 0 28 34" fill="none"
@@ -56,7 +56,7 @@ const Connection = () => {
                                           fill="#00A1B4"/>
                                 </svg></a>
 
-                                <a href=" https://wa.me/+996701103163 " className="connection__our__contact__logos__titles">Наш WhatsApp</a>
+                                <a href=" https://wa.me/+996776333636" className="connection__our__contact__logos__titles">Наш WhatsApp</a>
                             </div>
                             <a href="https://www.instagram.com/med.skill.kg/" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 28" fill="none"
@@ -74,7 +74,7 @@ const Connection = () => {
 
                                 <button className="connection__our__contact__btn">
                                     <a className="connection__our__contact__btn__a "
-                                       href="">Вызвать</a>
+                                       href="tel:+996700333636">Вызвать</a>
                                 </button>
                             </a>
                         </div>
