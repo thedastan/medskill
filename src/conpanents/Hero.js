@@ -27,7 +27,7 @@ const Hero = () => {
                         <div className="hero__title__Title">
                             <h1 data-aos="zoom-out-right">Скорая медицинская помощь 24/7 </h1>
                         </div>
-                        <a href="tel:+996701103163">
+                        <a href="tel:+996700333636">
                             <button className="hero__title__btn" data-aos="zoom-out-right">
                                 <h3 className="hero__title__btn__tel">Вызвать</h3>
                             </button>
