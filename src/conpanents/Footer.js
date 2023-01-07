@@ -15,7 +15,7 @@ const Footer = () => {
                         Скорая медицинская помощь
                     </h3>
 
-                        <a className="footer__tel" href="tel:+996701103163">+996 (701) 103 163</a>
+                        <a href="tel:+996700333636" className="footer__tel" >+996 (700) 333 636</a>
 
                 </div>
             </div>
