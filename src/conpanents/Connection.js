@@ -21,7 +21,7 @@ const Connection = () => {
                                     </svg>
                                 </a>
 
-                                <a className="connection__our__contact__logos__title" href="tel:+996552333636 ">+996 (552) 33 36 36</a>
+                                <a className="connection__our__contact__logos__title" href="tel:+996552333636 ">+996 (552) 333 636</a>
                             </div>
                             <div   className="connection__our__contact__logos">
                                 <a href="tel:+996700333636">
