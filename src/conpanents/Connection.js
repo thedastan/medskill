@@ -35,6 +35,18 @@ const Connection = () => {
 
                                 <a className="connection__our__contact__logos__title" href="tel:+996700333636">+996 (700) 333 636</a>
                             </div>
+        <div   className="connection__our__contact__logos">
+                                <a href="tel:+996700333636">
+                                    <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 27" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.41648 10.7622C4.67503 17.6099 10.4732 23.0542 17.6819 26.0056L18.8375 26.5024C21.4812 27.6388 24.589 26.7754 26.2015 24.4564L27.7116 22.2848C28.2025 21.5787 28.0531 20.6277 27.3672 20.0939L22.246 16.1076C21.4938 15.5221 20.3877 15.6585 19.8123 16.4077L18.228 18.4703C14.1628 16.5355 10.8623 13.351 8.85704 9.42869L10.9948 7.90012C11.7713 7.34491 11.9126 6.27769 11.3058 5.55192L7.17417 0.610562C6.62097 -0.0510561 5.63561 -0.195374 4.90384 0.278048L2.63754 1.74424C0.21906 3.30888 -0.67087 6.33223 0.534221 8.88982L1.41515 10.7595L1.41648 10.7622Z"
+                                            fill="#00A1B4"/>
+                                    </svg>
+                                </a>
+
+                                <a className="connection__our__contact__logos__title" href="tel:+996776333636">+996 776 333 636</a>
+                            </div>
                             <a href="https://www.google.com/maps/place/2+%D1%83%D0%BB.+%D0%90%D1%85%D1%83%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.841181,74.6298258,17z/data=!3m1!4b1!4m5!3m4!1s0x389eb66691f68657:0xf750797880b0316f!8m2!3d42.841181!4d74.6320145" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg2" viewBox="0 0 28 34" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +68,7 @@ const Connection = () => {
                                           fill="#00A1B4"/>
                                 </svg></a>
 
-                                <a href=" https://wa.me/+996776333636" className="connection__our__contact__logos__titles">Наш WhatsApp</a>
+                                <a href="https://wa.me/+996776333636" className="connection__our__contact__logos__titles">Наш WhatsApp</a>
                             </div>
                             <a href="https://www.instagram.com/med.skill.kg/" className="connection__our__contact__logos">
                                 <svg className="connection__our__contact__logos__cvg" viewBox="0 0 28 28" fill="none"
