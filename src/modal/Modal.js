@@ -6,7 +6,7 @@ import group3 from '../img/Group 52.png';
 const Modal = () => {
     return (
         <div>
-            <div className=" Modal">
+            <div className="Modal">
                 <label className="Modal__lab" htmlFor="modal" >
                     <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="26" cy="26" r="26" fill="#0000BB"/>
@@ -36,8 +36,6 @@ const Modal = () => {
                     </a>
 
                 </div>
-
-            </div>
         </div>
     );
 };
