@@ -14,7 +14,6 @@ const Hero = () => {
     return (
         <section id="hero">
 
-
             <div className="container">
                 <Modal/>
 
