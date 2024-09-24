@@ -50,20 +50,6 @@ const Card = () => {
                             </div>
 
                         </div>
-                        <div className="card__MinCard__cards" data-aos="fade-up-right">
-                            <h4 className="card__MinCard__cards__title2">Снятие интоксикации</h4>
-                            <div className="card__MinCard__cards__p3">
-                                <p> Комплексная восстановительная система детоксикации организма с применением
-                                    витаминотерапии, ноотропных и гепатопротекторных препаратов, позволит в короткий
-                                    срок вывести из организма алкоголь и продукты его распада.
-                                </p>
-                                <p> После очистки наблюдается нормализация общего состояния, работы сердечно- сосудистой
-                                    системы, снижение артериального давления и чувства тревоги ,апатии , уменьшение
-                                    эффекта «похмелья»
-                                </p>
-                            </div>
-
-                        </div>
                         <div className="card__MinCard__cards" data-aos="fade-left">
                             <h4 className="card__MinCard__cards__title2">Санавиация</h4>
                             <div className="card__MinCard__cards__p3">
