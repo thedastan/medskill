@@ -8,7 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
-import { Button } from "@/components/ui/button/Button";
 
  
 
@@ -44,11 +43,6 @@ const ServicesNew = () => {
 										</div>
 									))}
 								</div>
-							</div>
-							<div className="flex items-center justify-center gap-2">
-								<Button className="mt-4 flex w-full text-white items-center gap-2 justify-center">
-									{service.price}
-								</Button>
 							</div>
 						</Link>
 					))}
