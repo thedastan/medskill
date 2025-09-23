@@ -3,7 +3,7 @@ import React, { FC, ReactNode } from "react";
 import scss from "../layout/LayoutPage.module.scss";
 // import Header from "./header/Header";
 import Footer from "./footer/Footer";
-import Modal from "../modal/Modal";
+import Modal from "../pages/modal/Modal";
 
 interface LayoutPageProps {
   children: ReactNode;

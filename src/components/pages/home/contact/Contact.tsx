@@ -2,8 +2,11 @@ import Link from "next/link";
 import React from "react";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
+
+ 
 
 const data = [
   {
@@ -15,13 +18,13 @@ const data = [
   {
     id: 2,
     icon: <BsFillTelephoneFill />,
-    text: "+996 (552) 333 636",
+    text: "+996 (700) 333 636",
     follow: "tel:+996700333636",
   },
   {
     id: 3,
     icon: <BsFillTelephoneFill />,
-    text: "+996 (552) 333 636",
+    text: "+996 (776) 333 636",
     follow: "tel:+996776333636",
   },
   {
@@ -37,6 +40,13 @@ const data = [
     text: "Наш WhatsApp",
     follow: "https://wa.me/+996700333636",
   },
+  {
+    id: 5,
+    icon: <FaTelegramPlane />,
+    text: "Наш Telegram",
+    follow: "https://t.me/+996550822451",
+  },
+   
   {
     id: 6,
     icon: <AiFillInstagram />,
