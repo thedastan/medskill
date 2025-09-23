@@ -51,7 +51,7 @@ const Hero = () => {
 							Скорая помощь <br /> в Бишкеке
 						</h1>
 						<Link href={"tel:+996700333636"} target={"_blank"} className="bg-[#f0f0f0] md:flex justify-center items-center hidden w-full max-w-[210px] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
-							Вызвать
+						Позвонить сейчас
 						</Link>
 					</div>
 
@@ -71,7 +71,7 @@ const Hero = () => {
 						</div>
 					</div>
 					<Link href={"tel:+996700333636"} target={"_blank"} className="bg-[#f0f0f0] flex justify-center items-center md:hidden mt-10 w-full max-w-[210px] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
-						Вызвать
+					Позвонить сейчас
 					</Link>
 				</div>
 

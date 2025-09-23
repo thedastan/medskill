@@ -81,8 +81,8 @@ const Contact = () => {
 							<Link
 								href={"tel:+996700333636"}
 								target={"_blank"}
-								className="bg-[#f0f0f0] flex justify-center items-center w-[90%] md:w-[70%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
-								Вызвать
+								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
+								Позвонить сейчас
 							</Link>
 						</div>
 					</div>

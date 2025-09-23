@@ -24,7 +24,7 @@ const Footer = () => {
 					</Link>
 				</div>
 
-				<div className="  border-t border-white flex items-center justify-between pt-4">
+				<div className=" md:flex-row flex-col gap-4 border-t border-white flex items-center justify-between pt-4">
 					<p className="text-white text-[16px]">ОсОО &quot;МедСкилл&quot;</p>
 
 					<p className="text-white text-[16px]">ИНН 02608202110272</p>
