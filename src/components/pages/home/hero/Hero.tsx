@@ -47,8 +47,8 @@ const Hero = () => {
 							<Image src={logo} alt="img" />
 							<Image src={logo2} alt="img" />
 						</div>
-						<h1 className="text-white font-[600] w-full md:max-w-[450px] max-w-[350px] text-center md:text-start md:text-[60px] text-[35px] leading-[50px] md:leading-[60px]">
-							Скорая помощь в Бишкеке
+						<h1 className="text-white font-[600] w-full md:max-w-[520px] max-w-[350px] text-center md:text-start md:text-[60px] text-[35px] leading-[50px] md:leading-[60px]">
+							Скорая помощь <br /> в Бишкеке
 						</h1>
 						<Link href={"tel:+996700333636"} target={"_blank"} className="bg-[#f0f0f0] md:flex justify-center items-center hidden w-full max-w-[210px] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
 							Вызвать
