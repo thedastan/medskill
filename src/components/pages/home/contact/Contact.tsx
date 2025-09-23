@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { AiFillInstagram } from "react-icons/ai";
@@ -53,6 +54,29 @@ const data = [
 	},
 ];
 
+const gtag_report_conversion = (url?: string) => {
+	const callback = () => {
+		if (typeof url !== "undefined") {
+			window.location.href = url;
+		}
+	};
+
+	if (typeof window !== "undefined" && window.gtag) {
+		window.gtag("event", "conversion", {
+			send_to: "AW-17579381903/GezmCKmMuaAbEI-pwL5B",
+			value: 1.0,
+			currency: "USD",
+			event_callback: callback,
+		});
+	} else {
+		if (url) {
+			window.location.href = url;
+		}
+	}
+
+	return false;
+};
+
 const Contact = () => {
 	return (
 		<section className="bg-[#f3feff] md:py-[50px] py-[20px]">
@@ -78,18 +102,21 @@ const Contact = () => {
 						))}
 
 						<div className="flex items-center justify-center">
-							<Link
-								href={"tel:+996700333636"}
-								target={"_blank"}
-								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff] ">
+							<a
+								href="tel:+996700333636"
+								onClick={(e) => {
+									e.preventDefault();
+									gtag_report_conversion("tel:+996700333636");
+								}}
+								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff]">
 								Позвонить сейчас
-							</Link>
+							</a>
 						</div>
 					</div>
 					<div className="flex justify-end w-[100%] md:h-[650px] h-[430px]">
 						<div className="z-0 relative overflow-hidden rounded-[30px]">
 							<iframe
-              className="!w-[1000px] !h-[650px]"
+								className="!w-[1000px] !h-[650px]"
 								src="/map.html"
 								frameBorder="0"
 								scrolling="no"
