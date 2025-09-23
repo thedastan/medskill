@@ -6,7 +6,7 @@ class PublicPage {
 	HOME = "/";
 	TRANSPARTIROVKA = "/transportirovka-sanaviatsiya";
 	MEROPRIATI = "/soprovozhdenie-meropriyatiya";
-	DOMU = "/dkapelnici-na-domu";
+	DOMU = "/kapelnici-na-domu";
 	SPESIAL = "/vysov-uzkih-specialistov";
 	SROCHNO = "/srochnie-vizovi";
 }
