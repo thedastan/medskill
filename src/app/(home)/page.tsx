@@ -1,6 +1,5 @@
 import HomeComponents from "@/components/pages/home/HomeComponents";
-import { Metadata } from "next";
-import React from "react";
+import { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
 	title: "Скорая помощь в Бишкеке",
@@ -23,8 +22,12 @@ export const metadata: Metadata = {
 		apple: "/logo192.png",
 	},
 	manifest: "/manifest.json",
-	themeColor: "#000000",
 };
+
+// 👇 Вынесено сюда
+export const viewport: Viewport = {
+	themeColor: "#000000",
+  };
 
 const Home = () => <HomeComponents />;
 

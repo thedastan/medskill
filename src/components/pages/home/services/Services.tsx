@@ -7,17 +7,12 @@ import Link from "next/link";
 import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
 
- 
-
 import Svg1 from "@/assets/svg/svg";
 import Svg2 from "@/assets/svg/svg2";
 import Svg3 from "@/assets/svg/svg3";
 import Svg4 from "@/assets/svg/svg4";
 
 const Services = () => {
-	 
-
-	 
 	const dataSvg = [
 		{
 			img: <Svg1 />,
@@ -41,7 +36,7 @@ const Services = () => {
 		<section className="w-full relative py-10">
 			{/* ✅ Десктоп с фоном */}
 			<div
-				className="container "
+				className="container"
 				style={{
 					backgroundImage: `url(${fone.src})`,
 					backgroundSize: "cover",
@@ -51,25 +46,29 @@ const Services = () => {
 					Наши услуги
 				</h1>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full ">
-					{services?.map((service, index) => (
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full">
+					{services?.map((service) => (
 						<Link
 							href={`/${service.slug}`}
-							key={index}
+							key={service.slug} // ✅ уникальный ключ
 							className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
 							<div>
 								<div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">
-									<Image fill style={{ objectFit: "cover" }} src={service.image} alt="img" />
+									<Image
+										fill
+										style={{ objectFit: "cover" }}
+										src={service.image}
+										alt={service.title}
+									/>
 								</div>
 								<div className="flex flex-col gap-2">
 									<TitleComponent className="!text-[20px] mt-4 pb-4">
 										{service.title}
 									</TitleComponent>
-									{service.descriptions.map((el, index) => (
-										<div key={index}>
+									{service.descriptions.map((el) => (
+										<div key={el.description}> {/* ✅ уникальный ключ */}
 											<Description className="flex items-start gap-2 text-gray-600 !text-[16px]">
-												<span
-													className={`${"bg-[#16AEC0]"} flex text-white rounded-[50px] p-1`}>
+												<span className="bg-[#16AEC0] flex text-white rounded-[50px] p-1">
 													<RiCheckFill className="font-normal" />
 												</span>
 												{el.description}
@@ -84,14 +83,12 @@ const Services = () => {
 			</div>
 
 			{/* ✅ Мобильный без фона */}
-
-			<div className=" grid grid-cols-2 mt-10 md:hidden">
-				{dataSvg.map((el, index) => (
+			<div className="grid grid-cols-2 mt-10 md:hidden">
+				{dataSvg.map((el) => (
 					<div
-						key={index}
+						key={el.title} // ✅ ключ по title
 						className="bg-white rounded-[30px] flex flex-col justify-center gap-3 items-center p-4 w-full">
 						<h1>{el.img}</h1>
-
 						<p className="text-[#868686] text-[16px] text-center leading-6">
 							{el.title}
 						</p>
