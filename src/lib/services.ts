@@ -8,6 +8,7 @@ import img5 from "@/assets/img/srochnie-vizovi.png";
 
 export const services = [
 	{
+    id:1,
 		slug: "transportirovka-sanaviatsiya",
 		title: "Транспортировка и санавиация",
 		descriptions: [
@@ -21,6 +22,7 @@ export const services = [
 	},
 
 	{
+    id:2,
 		slug: "soprovozhdenie-meropriyatiya",
 		title: "Сопровождение мероприятий",
 		descriptions: [
@@ -35,6 +37,7 @@ export const services = [
 	},
 
 	{
+    id:3,
 		slug: "kapelnici-na-domu",
 		title: "Капельницы на дому",
 		descriptions: [
@@ -50,22 +53,23 @@ export const services = [
 	},
 
 	{
+		id: 4,
 		slug: "vysov-uzkih-specialistov",
 		title: "Вызов специалистов",
 		descriptions: [
-			{ description: "Кардиолог" },
-			{ description: "Невролог" },
-			{ description: "Анестезиолог" },
-			{ description: "Педиатр" },
-			{ description: "Терапевт" },
-			{ description: "Травматолог" },
-			{ description: "Уролог" },
+		  { description: "Специалист по сердцу" },
+		  { description: "Специалист по нервной системе" },
+		  { description: "Анестезиолог" },
+		  { description: "Детский специалист" },
+		  { description: "Врач общей практики" },
+		  { description: "Специалист по травмам" },
+		  { description: "Специалист по урологии" },
 		],
 		contact: [{ phone: "+996 703 631 592" }],
 		image: img4,
-	},
-
+	  },
 	{
+    id:5,
 		slug: "srochnie-vizovi",
 		title: "Срочные вызовы",
 		descriptions: [
