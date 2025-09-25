@@ -21,7 +21,7 @@ const Services = () => {
 	const dataSvg = [
 		{
 			img: <Svg1 />,
-			title: "Работаем день и ночь",
+			title: "Работаем круглосуточно 24/7",
 		},
 		{
 			img: <Svg2 />,
@@ -59,7 +59,7 @@ const Services = () => {
 							className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
 							<div>
 								<div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">
-									<Image fill objectFit="cover" src={service.image} alt="img" />
+									<Image fill style={{ objectFit: "cover" }} src={service.image} alt="img" />
 								</div>
 								<div className="flex flex-col gap-2">
 									<TitleComponent className="!text-[20px] mt-4 pb-4">
