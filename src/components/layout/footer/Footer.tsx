@@ -13,7 +13,7 @@ const Footer = () => {
 						<Image src={logo2} alt="img" />
 					</div>
 					<h3 className="md:text-[30px] text-[18px] text-center font-[600] leading-[38px] md:w-[250px] w-full text-white">
-						Скорая медицинская помощь
+						Скорая помощь
 					</h3>
 
 					<Link
@@ -25,9 +25,14 @@ const Footer = () => {
 				</div>
 
 				<div className=" md:flex-row flex-col gap-4 border-t border-white flex items-center justify-between pt-4">
+					<div>
 					<p className="text-white text-[16px]">ОсОО &quot;МедСкилл&quot;</p>
-
 					<p className="text-white text-[16px]">ИНН 02608202110272</p>
+				</div>
+
+				<Link href="https://instagram.com/dastan.mukeev" target="_blank">
+					<p className="text-white text-[16px]">Разработал: ИП Мукеев Дастан Ракымович</p>
+				</Link>
 				</div>
 			</div>
 		</footer>

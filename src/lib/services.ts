@@ -11,7 +11,7 @@ export const services = [
 		slug: "transportirovka-sanaviatsiya",
 		title: "Транспортировка и санавиация",
 		descriptions: [
-			{ description: "Быстрая и комфортабельная транспортировка" },
+			{ description: "Быстрая и комфортная перевозка" },
 			{ description: "По городу" },
 			{ description: "По регионам" },
 			{ description: "По всей СНГ" },
@@ -22,13 +22,13 @@ export const services = [
 
 	{
 		slug: "soprovozhdenie-meropriyatiya",
-		title: "Сопровождение на мероприятиях",
+		title: "Сопровождение мероприятий",
 		descriptions: [
-			{ description: "Сопровождение вне зависимости от продолжительности" },
+			{ description: "Сопровождение на любом формате событий" },
 			{ description: "Спортивные мероприятия" },
 			{ description: "Концерты" },
 			{ description: "Корпоративы" },
-			{ description: "Похороны" },
+			{ description: "Траурные мероприятия" },
 		],
 		contact: [{ phone: "+996 703 631 592" }],
 		image: img2,
@@ -38,12 +38,12 @@ export const services = [
 		slug: "kapelnici-na-domu",
 		title: "Капельницы на дому",
 		descriptions: [
-			{ description: "Осмотр и оценка состояния" },
-			{ description: "ОРВИ, грипп" },
-			{ description: "Алкогольная интоксикация" },
-			{ description: "Выведение из запойного состояния" },
-			{ description: "Повышение температуры тела" },
-			{ description: "Аллергические реакции" },
+			{ description: "Предварительная консультация специалиста" },
+			{ description: "Поддержка организма" },
+			{ description: "Помощь при недомогании" },
+			{ description: "Восстановительные процедуры" },
+			{ description: "Снятие дискомфорта" },
+			{ description: "Общая поддержка состояния" },
 		],
 		contact: [{ phone: "+996 703 631 592" }],
 		image: img3,
@@ -51,11 +51,11 @@ export const services = [
 
 	{
 		slug: "vysov-uzkih-specialistov",
-		title: "Вызов узких специалистов",
+		title: "Вызов специалистов",
 		descriptions: [
 			{ description: "Кардиолог" },
-			{ description: "Невролог, невропатолог" },
-			{ description: "Реаниматолог-анестезиолог" },
+			{ description: "Невролог" },
+			{ description: "Анестезиолог" },
 			{ description: "Педиатр" },
 			{ description: "Терапевт" },
 			{ description: "Травматолог" },
@@ -63,20 +63,19 @@ export const services = [
 		],
 		contact: [{ phone: "+996 703 631 592" }],
 		image: img4,
-    
 	},
 
 	{
 		slug: "srochnie-vizovi",
 		title: "Срочные вызовы",
 		descriptions: [
-			{ description: "Кровотечение" },
-			{ description: "ДТП" },
-			{ description: "Травмы разной степени" },
-			{ description: "Сердечные приступы" },
-			{ description: "Боли в животе различной локализации" },
-			{ description: "Отравления" },
-			{ description: "Запоры" },
+			{ description: "Ситуации, требующие быстрого реагирования" },
+			{ description: "Дорожные происшествия" },
+			{ description: "Различные травмы" },
+			{ description: "Сильный дискомфорт" },
+			{ description: "Острая боль" },
+			{ description: "Пищевые реакции" },
+			{ description: "Неприятные состояния" },
 		],
 		contact: [{ phone: "+996 703 631 592" }],
 		image: img5,
