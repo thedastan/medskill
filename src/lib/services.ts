@@ -32,7 +32,7 @@ export const services = [
 			{ description: "Корпоративы" },
 			{ description: "Траурные мероприятия" },
 		],
-		contact: [{ phone: "+996 703 631 592" }],
+		contact: [{ phone: "+996 (700) 333 636" }],
 		image: img2,
 	},
 
@@ -48,7 +48,7 @@ export const services = [
 			{ description: "Снятие дискомфорта" },
 			{ description: "Общая поддержка состояния" },
 		],
-		contact: [{ phone: "+996 703 631 592" }],
+		contact: [{ phone: "+996 (700) 333 636" }],
 		image: img3,
 	},
 
@@ -65,7 +65,7 @@ export const services = [
 		  { description: "Специалист по травмам" },
 		  { description: "Специалист по урологии" },
 		],
-		contact: [{ phone: "+996 703 631 592" }],
+		contact: [{ phone: "+996 (700) 333 636" }],
 		image: img4,
 	  },
 	{
@@ -81,7 +81,7 @@ export const services = [
 			{ description: "Пищевые реакции" },
 			{ description: "Неприятные состояния" },
 		],
-		contact: [{ phone: "+996 703 631 592" }],
+		contact: [{ phone: "+996 (700) 333 636" }],
 		image: img5,
 	},
 ];
