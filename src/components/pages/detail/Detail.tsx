@@ -4,7 +4,6 @@ import { Title } from "@/components/ui/text/Title";
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
-import { TitleComponent } from "@/components/ui/text/TitleComponent";
 import { Button } from "@/components/ui/button/Button";
 import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
@@ -12,6 +11,7 @@ import { SlArrowLeft } from "react-icons/sl";
 import { useEffect } from "react";
 import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
 import LeadForm from "@/components/ui/form/LeadForm";
+import ServiceCard from "@/components/ui/service-card/ServiceCard";
 
 interface DetailProps {
   slug: string;
@@ -93,47 +93,16 @@ const Detail = ({ slug }: DetailProps) => {
 
         {/* Другие услуги */}
         <Title className="text-start pb-10 mt-20">Другие услуги</Title>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full pb-10">
           {services
             .filter((srv) => srv.slug !== slug)
             .map((srv) => (
-            <Link
-              href={`/${srv.slug}`}
-              key={srv.slug}
-              onClick={() =>
-                trackEvent("service_card_click", {
-                  slug: srv.slug,
-                  location: "detail_other_services",
-                })
-              }
-              className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
-              <div>
-                <div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">
-                  <Image
-                    fill
-                    style={{ objectFit: "cover" }}
-                    src={srv.image}
-                    alt={srv.title}
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <TitleComponent className="!text-[20px] mt-4 pb-4">
-                    {srv.title}
-                  </TitleComponent>
-                  {srv.descriptions.map((el) => (
-                    <div key={el.description}>
-                      <Description className="flex items-start gap-2 text-gray-600 !text-[16px]">
-                        <span className="bg-[#16AEC0] flex text-white rounded-[50px] p-1">
-                          <RiCheckFill className="font-normal" />
-                        </span>
-                        {el.description}
-                      </Description>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Link>
-          ))}
+              <ServiceCard
+                key={srv.slug}
+                service={srv}
+                location="detail_other_services"
+              />
+            ))}
         </div>
       </div>
     </section>

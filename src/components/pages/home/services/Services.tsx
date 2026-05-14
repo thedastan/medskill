@@ -1,41 +1,23 @@
 "use client";
 import fone from "@/assets/img/fone.png";
-import { TitleComponent } from "@/components/ui/text/TitleComponent";
-import { Description } from "@/components/ui/text/Description";
-import Image from "next/image";
-import Link from "next/link";
-import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
-import { trackEvent } from "@/lib/gtag";
 
 import Svg1 from "@/assets/svg/svg";
 import Svg2 from "@/assets/svg/svg2";
 import Svg3 from "@/assets/svg/svg3";
 import Svg4 from "@/assets/svg/svg4";
+import ServiceCard from "@/components/ui/service-card/ServiceCard";
 
 const Services = () => {
 	const dataSvg = [
-		{
-			img: <Svg1 />,
-			title: "Работаем круглосуточно 24/7",
-		},
-		{
-			img: <Svg2 />,
-			title: "Профессиональная команда",
-		},
-		{
-			img: <Svg3 />,
-			title: "Гарантированный сервис качества",
-		},
-		{
-			img: <Svg4 />,
-			title: "Мы ценим пунктуальность",
-		},
+		{ img: <Svg1 />, title: "Работаем круглосуточно 24/7" },
+		{ img: <Svg2 />, title: "Профессиональная команда" },
+		{ img: <Svg3 />, title: "Гарантированный сервис качества" },
+		{ img: <Svg4 />, title: "Мы ценим пунктуальность" },
 	];
 
 	return (
-		<section className="w-full relative py-10">
-			{/* ✅ Десктоп с фоном */}
+		<section className="w-full relative py-10 md:py-14">
 			<div
 				className="container"
 				style={{
@@ -43,57 +25,32 @@ const Services = () => {
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}>
-				<h1 className="text-[#16aec0] font-[600] text-[54px] mb-6">
-					Наши услуги
-				</h1>
+				<div className="mb-8 md:mb-10">
+					<h2 className="text-[#16aec0] font-[700] text-[36px] md:text-[48px] leading-tight">
+						Наши услуги
+					</h2>
+					<p className="text-[#16aec0]/70 text-[15px] md:text-[17px] mt-2 max-w-[600px]">
+						Профессиональная медицинская помощь от частной службы скорой в
+						Бишкеке
+					</p>
+				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full">
-					{services?.map((service) => (
-						<Link
-							href={`/${service.slug}`}
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 w-full">
+					{services.map((service) => (
+						<ServiceCard
 							key={service.slug}
-							onClick={() =>
-								trackEvent("service_card_click", {
-									slug: service.slug,
-									location: "home_services_grid",
-								})
-							}
-							className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
-							<div>
-								<div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">
-									<Image
-										fill
-										style={{ objectFit: "cover" }}
-										src={service.image}
-										alt={service.title}
-									/>
-								</div>
-								<div className="flex flex-col gap-2">
-									<TitleComponent className="!text-[20px] mt-4 pb-4">
-										{service.title}
-									</TitleComponent>
-									{service.descriptions.map((el) => (
-										<div key={el.description}> {/* ✅ уникальный ключ */}
-											<Description className="flex items-start gap-2 text-gray-600 !text-[16px]">
-												<span className="bg-[#16AEC0] flex text-white rounded-[50px] p-1">
-													<RiCheckFill className="font-normal" />
-												</span>
-												{el.description}
-											</Description>
-										</div>
-									))}
-								</div>
-							</div>
-						</Link>
+							service={service}
+							location="home_services_grid"
+						/>
 					))}
 				</div>
 			</div>
 
-			{/* ✅ Мобильный без фона */}
+			{/* Trust иконки на мобиле */}
 			<div className="grid grid-cols-2 mt-10 md:hidden">
 				{dataSvg.map((el) => (
 					<div
-						key={el.title} // ✅ ключ по title
+						key={el.title}
 						className="bg-white rounded-[30px] flex flex-col justify-center gap-3 items-center p-4 w-full">
 						<h1>{el.img}</h1>
 						<p className="text-[#868686] text-[16px] text-center leading-6">
