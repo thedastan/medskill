@@ -29,8 +29,8 @@ export const CITY = env("CITY", "Бишкек");
 export const COUNTRY_CODE_ISO = env("COUNTRY_CODE_ISO", "KG");
 export const ADDRESS_MAP_URL = env("ADDRESS_MAP_URL", "https://go.2gis.com/jsfPu");
 export const ADDRESS_GEO = {
-	latitude: Number(env("ADDRESS_LAT", "42.841181")),
-	longitude: Number(env("ADDRESS_LNG", "74.6320145")),
+	latitude: Number(env("ADDRESS_LAT", "42.841497")),
+	longitude: Number(env("ADDRESS_LNG", "74.631613")),
 };
 
 // ───────── Производные форматы (вычисляются автоматически) ─────────
