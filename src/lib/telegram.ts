@@ -1,5 +1,5 @@
 const TELEGRAM_API = "https://api.telegram.org";
-const SITE_URL = "https://medskill.com.kg";
+const SITE_URL = "https://www.medskill.com.kg";
 
 export interface LeadPayload {
 	name: string;

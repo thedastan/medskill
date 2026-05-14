@@ -3,7 +3,7 @@ import StructuredData from "@/lib/StructuredData";
 import type { Metadata } from "next";
 import { services } from "@/lib/services";
 
-const SITE_URL = "https://medskill.com.kg";
+const SITE_URL = "https://www.medskill.com.kg";
 
 export const metadata: Metadata = {
 	title: "Скорая помощь в Бишкеке — приедем за 15 минут, 24/7",

@@ -4,7 +4,7 @@ import Detail from "@/components/pages/detail/Detail";
 import { services } from "@/lib/services";
 import StructuredData from "@/lib/StructuredData";
 
-const SITE_URL = "https://medskill.com.kg";
+const SITE_URL = "https://www.medskill.com.kg";
 
 interface Params {
 	slug: string;

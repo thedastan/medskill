@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
 
-const SITE = "https://medskill.com.kg";
+const SITE = "https://www.medskill.com.kg";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const now = new Date();

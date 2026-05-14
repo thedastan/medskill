@@ -15,7 +15,7 @@ const geistMono = localFont({
 	weight: "100 900",
 });
 
-const SITE_URL = "https://medskill.com.kg";
+const SITE_URL = "https://www.medskill.com.kg";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
