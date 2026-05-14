@@ -90,58 +90,44 @@ const Contact = () => {
 						Наши контакты
 					</h1>
 				</div>
-				<div className="flex justify-center w-full flex-col md:justify-center items-start gap-[10px]">
-					<div className="flex md:absolute z-50 flex-col w-[100%] md:w-[380px] h-[470] gap-[20px] md:gap-[30px] bg-[#e9fdff] p-[50px] rounded-[50px] shadow-[0_4px_19px_-3px_rgba(0,0,0,0.25)]">
-						{data.map((el) => {
-							const channel = channelFromHref(el.follow);
-							const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-								if (channel === "phone") {
-									e.preventDefault();
-									reportPhoneConversion(el.follow);
-									return;
-								}
-								trackEvent("contact_click", {
-									channel,
-									location: "contact_block",
-								});
-							};
-							return (
-								<Link
-									href={el.follow}
-									key={`${el.id}-${el.follow}`}
-									target={"_blank"}
-									onClick={onClick}
-									className="flex items-center gap-[20px]">
-									<h1 className="text-[#00a1b4] text-[30px]">{el.icon}</h1>
-									<p className="md:text-[20px] text-[18px] text-[#00a1b4]">
-										{el.text}
-									</p>
-								</Link>
-							);
-						})}
+				<div className="flex flex-col w-full max-w-[480px] mx-auto md:mx-0 gap-[20px] md:gap-[24px] bg-[#e9fdff] p-[40px] md:p-[50px] rounded-[40px] md:rounded-[50px] shadow-[0_4px_19px_-3px_rgba(0,0,0,0.15)]">
+					{data.map((el) => {
+						const channel = channelFromHref(el.follow);
+						const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+							if (channel === "phone") {
+								e.preventDefault();
+								reportPhoneConversion(el.follow);
+								return;
+							}
+							trackEvent("contact_click", {
+								channel,
+								location: "contact_block",
+							});
+						};
+						return (
+							<Link
+								href={el.follow}
+								key={`${el.id}-${el.follow}`}
+								target={"_blank"}
+								onClick={onClick}
+								className="flex items-center gap-[20px]">
+								<h1 className="text-[#00a1b4] text-[28px]">{el.icon}</h1>
+								<p className="md:text-[19px] text-[17px] text-[#00a1b4]">
+									{el.text}
+								</p>
+							</Link>
+						);
+					})}
 
-						<div className="flex items-center justify-center">
-							<a
-								href={TEL_HREF(PHONE_PRIMARY)}
-								onClick={(e) => {
-									e.preventDefault();
-									reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
-								}}
-								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff]">
-								Позвонить сейчас
-							</a>
-						</div>
-					</div>
-					<div className="flex justify-end w-[100%] md:h-[650px] h-[430px]">
-						<div className="z-0 relative overflow-hidden rounded-[30px]">
-							<iframe
-								className="!w-[1000px] !h-[650px]"
-								src="/map.html"
-								frameBorder="0"
-								scrolling="no"
-								title="Map on 2GIS"></iframe>
-						</div>
-					</div>
+					<a
+						href={TEL_HREF(PHONE_PRIMARY)}
+						onClick={(e) => {
+							e.preventDefault();
+							reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
+						}}
+						className="bg-[#16AEC0] hover:bg-[#0a9bb4] flex justify-center items-center w-full h-[60px] text-[18px] text-white font-[600] rounded-[14px] shadow-[0_4px_14px_-4px_rgba(22,174,192,0.5)] active:scale-[0.98] transition-all mt-2">
+						Позвонить сейчас
+					</a>
 				</div>
 			</div>
 		</section>
