@@ -24,13 +24,10 @@ export const INSTAGRAM_LINK = env(
 );
 
 // Адрес
-export const ADDRESS_LINE = env("ADDRESS_LINE", "ул. Ахунбаева 2/1");
+export const ADDRESS_LINE = env("ADDRESS_LINE", "ул. Исы Ахунбаева, 2/6а");
 export const CITY = env("CITY", "Бишкек");
 export const COUNTRY_CODE_ISO = env("COUNTRY_CODE_ISO", "KG");
-export const ADDRESS_MAP_URL = env(
-	"ADDRESS_MAP_URL",
-	"https://www.google.com/maps/place/2+%D1%83%D0%BB.+%D0%90%D1%85%D1%83%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.841181,74.6298258,17z"
-);
+export const ADDRESS_MAP_URL = env("ADDRESS_MAP_URL", "https://go.2gis.com/jsfPu");
 export const ADDRESS_GEO = {
 	latitude: Number(env("ADDRESS_LAT", "42.841181")),
 	longitude: Number(env("ADDRESS_LNG", "74.6320145")),
