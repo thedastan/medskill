@@ -4,6 +4,8 @@ import scss from "../layout/LayoutPage.module.scss";
 // import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import Modal from "../pages/modal/Modal";
+import ScrollTracker from "../analytics/ScrollTracker";
+import StickyCta from "./StickyCta";
 
 interface LayoutPageProps {
   children: ReactNode;
@@ -12,10 +14,11 @@ interface LayoutPageProps {
 const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
   return (
     <div className={scss.LayoutPage}>
-      
-      <main>{children}</main>
+      <main className="pb-[88px] md:pb-0">{children}</main>
       <Footer />
-      <Modal/>
+      <Modal />
+      <StickyCta />
+      <ScrollTracker />
     </div>
   );
 };

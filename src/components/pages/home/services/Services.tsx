@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
+import { trackEvent } from "@/lib/gtag";
 
 import Svg1 from "@/assets/svg/svg";
 import Svg2 from "@/assets/svg/svg2";
@@ -50,7 +51,13 @@ const Services = () => {
 					{services?.map((service) => (
 						<Link
 							href={`/${service.slug}`}
-							key={service.slug} // ✅ уникальный ключ
+							key={service.slug}
+							onClick={() =>
+								trackEvent("service_card_click", {
+									slug: service.slug,
+									location: "home_services_grid",
+								})
+							}
 							className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
 							<div>
 								<div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">

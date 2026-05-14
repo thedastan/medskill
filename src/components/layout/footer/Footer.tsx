@@ -1,7 +1,9 @@
+"use client";
 import logo from "@/assets/img/image 8.png";
 import logo2 from "@/assets/img/Med Skill.png";
 import Image from "next/image";
 import Link from "next/link";
+import { reportPhoneConversion } from "@/lib/gtag";
 
 const Footer = () => {
 	return (
@@ -18,7 +20,10 @@ const Footer = () => {
 
 					<Link
 						href="tel:+996700333636"
-						target={"_blank"}
+						onClick={(e) => {
+							e.preventDefault();
+							reportPhoneConversion("tel:+996700333636");
+						}}
 						className="md:text-[32px] text-[18px] text-white">
 						+996 (700) 333 636
 					</Link>

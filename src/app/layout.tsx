@@ -15,33 +15,65 @@ const geistMono = localFont({
 	weight: "100 900",
 });
 
+const SITE_URL = "https://medskill.com.kg";
+
 export const metadata: Metadata = {
-	title: "Скорая помощь в Бишкеке",
-	description: "Приедем в течении 15 минут - Частная-Скорая помощь Бишкек",
-	keywords:
-		"Скорая помощь, Частная скорая помощь, Медицинская помощь, Экстренная помощь, Бишкек, Скорая медицинская помощь, Скорая помощь в Бишкеке, Медицинская помощь на дому, Экстренная медицинская помощь, Скорая помощь 24",
+	metadataBase: new URL(SITE_URL),
+	title: {
+		default: "Скорая помощь в Бишкеке — MedSkill",
+		template: "%s | MedSkill",
+	},
+	description:
+		"Частная скорая помощь в Бишкеке. Приезжаем в течение 15 минут. Работаем 24/7. Транспортировка, капельницы на дому, вызов узких специалистов.",
+	keywords: [
+		"скорая помощь Бишкек",
+		"частная скорая помощь",
+		"медицинская помощь на дому",
+		"капельницы на дому",
+		"вызов врача Бишкек",
+		"санавиация",
+		"экстренная помощь Бишкек",
+		"транспортировка больных",
+		"скорая 24/7",
+	],
 	openGraph: {
-		title: "Скорая помощь Бишкек - Работаем 24/7",
-		description: "Приедем в течении 15 минут - Частная-Скорая помощь Бишкек",
-		url: "https://medskill.com.kg",
-		siteName: "Скорая помощь Бишкек",
+		title: "Скорая помощь в Бишкеке — MedSkill",
+		description:
+			"Частная скорая помощь в Бишкеке. Приедем в течение 15 минут. Работаем 24/7.",
+		url: SITE_URL,
+		siteName: "MedSkill",
+		locale: "ru_RU",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Скорая помощь в Бишкеке — MedSkill",
+		description: "Приезжаем в течение 15 минут. Работаем 24/7.",
 	},
 	robots: {
 		index: true,
 		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
 	},
-	metadataBase: new URL("https://medskill.com.kg"),
+	alternates: {
+		canonical: SITE_URL,
+	},
 	icons: {
 		icon: "/favicon.ico",
 		apple: "/logo192.png",
 	},
 	manifest: "/manifest.json",
-
 };
 
 export const viewport: Viewport = {
-	themeColor: "#000000",
-  };
+	themeColor: "#16AEC0",
+};
+
 export default function RootLayout({
 	children,
 }: {
@@ -65,15 +97,6 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17579381903');
-          `}
-				</Script>
-
-				{/* Conversion Event */}
-				<Script id="gtag-conversion" strategy="afterInteractive">
-					{`
-            gtag('event', 'conversion', {
-              'send_to': 'AW-17579366246/uUG_CICGkp0bEOauv75B'
-            });
           `}
 				</Script>
 			</body>

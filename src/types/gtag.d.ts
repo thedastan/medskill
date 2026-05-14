@@ -1,11 +1,11 @@
 // types/gtag.d.ts
 
 interface GtagEventParams {
-	send_to: string;
+	send_to?: string;
 	value?: number;
 	currency?: string;
 	event_callback?: () => void;
-	[key: string]: unknown; // ✅ Заменяем any → unknown (безопасная альтернатива)
+	[key: string]: unknown;
 }
 
 interface Gtag {

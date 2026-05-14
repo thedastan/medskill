@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button/Button";
 import { RiCheckFill } from "react-icons/ri";
 import { services } from "@/lib/services";
 import { SlArrowLeft } from "react-icons/sl";
+import { useEffect } from "react";
+import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
 
 interface DetailProps {
   slug: string;
@@ -16,6 +18,13 @@ interface DetailProps {
 
 const Detail = ({ slug }: DetailProps) => {
   const service = services.find((el) => el.slug === String(slug));
+
+  useEffect(() => {
+    if (service) {
+      trackEvent("service_view", { slug: service.slug, title: service.title });
+    }
+  }, [service]);
+
   if (!service) return <p>Услуга не найдена</p>;
 
   return (
@@ -57,15 +66,22 @@ const Detail = ({ slug }: DetailProps) => {
             ))}
 
             <div className="flex flex-wrap items-start gap-3 mt-8">
-              {service.contact.map((el) => (
-                <Link
-                  key={el.phone}
-                  href={`tel:${el.phone}`}
-                  className="flex items-center gap-2 bg-[#16AEC0] text-white rounded-[10px] p-3 shadow transition">
-                  <FaPhoneAlt />
-                  <Description className="text-white">{el.phone}</Description>
-                </Link>
-              ))}
+              {service.contact.map((el) => {
+                const href = `tel:${el.phone.replace(/[^+\d]/g, "")}`;
+                return (
+                  <Link
+                    key={el.phone}
+                    href={href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      reportPhoneConversion(href);
+                    }}
+                    className="flex items-center gap-2 bg-[#16AEC0] text-white rounded-[10px] p-3 shadow transition">
+                    <FaPhoneAlt />
+                    <Description className="text-white">{el.phone}</Description>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -76,7 +92,13 @@ const Detail = ({ slug }: DetailProps) => {
           {services?.map((srv) => (
             <Link
               href={`/${srv.slug}`}
-              key={srv.slug} // ✅ уникальный ключ
+              key={srv.slug}
+              onClick={() =>
+                trackEvent("service_card_click", {
+                  slug: srv.slug,
+                  location: "detail_other_services",
+                })
+              }
               className="p-3 bg-white flex flex-col justify-between h-full min-h-[330px] rounded-[20px] shadow hover:shadow-lg transition">
               <div>
                 <div className="w-full h-[300px] relative overflow-hidden rounded-[16px]">

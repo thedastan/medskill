@@ -6,6 +6,7 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
+import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
 
 const data = [
 	{
@@ -40,41 +41,32 @@ const data = [
 		follow: "https://wa.me/+996700333636",
 	},
 	{
-		id: 5,
+		id: 6,
 		icon: <FaTelegramPlane />,
 		text: "Наш Telegram",
 		follow: "https://t.me/+996550822451",
 	},
-
 	{
-		id: 6,
+		id: 7,
 		icon: <AiFillInstagram />,
 		text: "Наш Instagram",
 		follow: "https://www.instagram.com/med.skill.kg/",
 	},
 ];
 
-const gtag_report_conversion = (url?: string) => {
-	const callback = () => {
-		if (typeof url !== "undefined") {
-			window.location.href = url;
-		}
-	};
+type ContactChannel =
+	| "phone"
+	| "location"
+	| "whatsapp"
+	| "telegram"
+	| "instagram";
 
-	if (typeof window !== "undefined" && window.gtag) {
-		window.gtag("event", "conversion", {
-			send_to: "AW-17579381903/GezmCKmMuaAbEI-pwL5B",
-			value: 1.0,
-			currency: "USD",
-			event_callback: callback,
-		});
-	} else {
-		if (url) {
-			window.location.href = url;
-		}
-	}
-
-	return false;
+const channelFromHref = (follow: string): ContactChannel => {
+	if (follow.startsWith("tel:")) return "phone";
+	if (follow.includes("wa.me")) return "whatsapp";
+	if (follow.includes("t.me")) return "telegram";
+	if (follow.includes("instagram")) return "instagram";
+	return "location";
 };
 
 const Contact = () => {
@@ -88,25 +80,40 @@ const Contact = () => {
 				</div>
 				<div className="flex justify-center w-full flex-col md:justify-center items-start gap-[10px]">
 					<div className="flex md:absolute z-50 flex-col w-[100%] md:w-[380px] h-[470] gap-[20px] md:gap-[30px] bg-[#e9fdff] p-[50px] rounded-[50px] shadow-[0_4px_19px_-3px_rgba(0,0,0,0.25)]">
-						{data.map((el) => (
-							<Link
-								href={el.follow}
-								key={el.id}
-								target={"_blank"}
-								className="flex items-center gap-[20px]">
-								<h1 className="text-[#00a1b4] text-[30px]">{el.icon}</h1>
-								<p className="md:text-[20px] text-[18px] text-[#00a1b4]">
-									{el.text}
-								</p>
-							</Link>
-						))}
+						{data.map((el) => {
+							const channel = channelFromHref(el.follow);
+							const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+								if (channel === "phone") {
+									e.preventDefault();
+									reportPhoneConversion(el.follow);
+									return;
+								}
+								trackEvent("contact_click", {
+									channel,
+									location: "contact_block",
+								});
+							};
+							return (
+								<Link
+									href={el.follow}
+									key={`${el.id}-${el.follow}`}
+									target={"_blank"}
+									onClick={onClick}
+									className="flex items-center gap-[20px]">
+									<h1 className="text-[#00a1b4] text-[30px]">{el.icon}</h1>
+									<p className="md:text-[20px] text-[18px] text-[#00a1b4]">
+										{el.text}
+									</p>
+								</Link>
+							);
+						})}
 
 						<div className="flex items-center justify-center">
 							<a
 								href="tel:+996700333636"
 								onClick={(e) => {
 									e.preventDefault();
-									gtag_report_conversion("tel:+996700333636");
+									reportPhoneConversion("tel:+996700333636");
 								}}
 								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff]">
 								Позвонить сейчас

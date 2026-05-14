@@ -1,60 +1,68 @@
-// app/(home)/[slug]/page.tsx
-
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import Detail from "@/components/pages/detail/Detail";
 import { services } from "@/lib/services";
 import StructuredData from "@/lib/StructuredData";
 
-// Тип для параметров
+const SITE_URL = "https://medskill.com.kg";
+
 interface Params {
-  slug: string;
+	slug: string;
 }
 
-// Генерация структурированных данных (Schema.org) — опционально
-const generateServiceStructuredData = (service: (typeof services)[0]) => {
-  return {
-    "@context": "https://schema.org",
-    "@type": "MedicalService",
-    "name": service.title,
-    "description": service.descriptions.map(d => d.description).join(" "),
-    "provider": {
-      "@type": "Organization",
-      "name": "MedSkill",
-      "telephone": service.contact[0]?.phone,
-      "url": "https://www.medskill.com.kg"
-    },
-    "image": service.image.src,
-    "url": `https://www.medskill.com.kg/${service.slug}`
-  };
-};
+export const dynamicParams = false;
 
-// Генерация метаданных
-export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
-	const { slug } = await params; // Распаковываем Promise
+const buildServiceJsonLd = (service: (typeof services)[0]) => ({
+	"@context": "https://schema.org",
+	"@type": "MedicalService",
+	name: service.title,
+	description: service.descriptions.map((d) => d.description).join(" "),
+	provider: {
+		"@type": "MedicalBusiness",
+		name: "MedSkill",
+		telephone: service.contact[0]?.phone,
+		url: SITE_URL,
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "ул. Ахунбаева 2/1",
+			addressLocality: "Бишкек",
+			addressCountry: "KG",
+		},
+	},
+	image: `${SITE_URL}${service.image.src}`,
+	url: `${SITE_URL}/${service.slug}`,
+});
 
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<Params>;
+}): Promise<Metadata> {
+	const { slug } = await params;
 	const service = services.find((el) => el.slug === slug);
 
 	if (!service) {
 		return {
-			title: "Услуга не найдена | MedSkill",
-			description: "Запрашиваемая услуга не существует.",
-			alternates: {
-				canonical: "https://www.medskill.com.kg/404",
-			},
+			title: "Услуга не найдена",
+			robots: { index: false, follow: false },
 		};
 	}
 
-	const title = `${service.title} | MedSkill`;
-	const description = `Скорая медицинская помощь ${service.title.toLowerCase()}. ${service.descriptions[0]?.description || ""} Вызов врача на дом или срочная транспортировка. Свяжитесь с нами: ${service.contact[0]?.phone}.`;
+	const title = `${service.title} — Скорая помощь Бишкек`;
+	const description = `${service.title}. ${
+		service.descriptions[0]?.description || ""
+	} Звоните: ${service.contact[0]?.phone}. Работаем 24/7.`;
+	const canonical = `${SITE_URL}/${service.slug}`;
 
 	return {
 		title,
 		description,
+		alternates: { canonical },
 		openGraph: {
 			title,
 			description,
 			type: "website",
-			url: `https://www.medskill.com.kg/${service.slug}`, // ✅ Без пробелов!
+			url: canonical,
 			images: [
 				{
 					url: service.image.src,
@@ -64,6 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 				},
 			],
 			siteName: "MedSkill",
+			locale: "ru_RU",
 		},
 		twitter: {
 			card: "summary_large_image",
@@ -71,36 +80,23 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 			description,
 			images: [service.image.src],
 		},
-		alternates: {
-			canonical: `https://www.medskill.com.kg/${service.slug}`, // ✅ Без пробелов!
-		},
-		robots: {
-			index: true,
-			follow: true,
-		},
 	};
 }
 
-// Генерация статических путей для SSG
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-	return services.map((service) => ({
-		slug: service.slug,
-	}));
+	return services.map((service) => ({ slug: service.slug }));
 }
 
-// Компонент страницы
 const Page = async ({ params }: { params: Promise<Params> }) => {
 	const { slug } = await params;
 	const service = services.find((s) => s.slug === slug);
 
-	if (!service) {
-		return <p>Услуга не найдена</p>;
-	}
+	if (!service) notFound();
 
 	return (
 		<>
 			<StructuredData
-				data={generateServiceStructuredData(service)}
+				data={buildServiceJsonLd(service)}
 				id={`service-${slug}`}
 			/>
 			<Detail slug={slug} />
