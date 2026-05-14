@@ -91,24 +91,24 @@ const Hero = () => {
 					</div>
 
 					{/* ПРАВАЯ КОЛОНКА — машина */}
-					<div className="w-full max-w-[320px] md:max-w-[640px] mx-auto md:mt-0 mt-4 relative flex items-center justify-center overflow-hidden">
+					<div className="w-full md:max-w-[640px] md:mt-0 mt-4 relative flex items-center justify-center overflow-hidden">
 						<Image
 							src={circle}
 							alt=""
 							aria-hidden="true"
 							priority
-							className="animate-spin-right z-0 opacity-90 w-full h-auto"
+							className="animate-spin-right z-0 opacity-90"
 						/>
 						<div className="absolute flex items-center justify-center">
-							<div className="flex gap-[20px] md:gap-[30px] absolute mr-[30px] md:mr-[50px]">
-								<div className="md:w-[80px] w-[44px] md:h-[30px] h-[16px] rounded-xl bg-[#0044ff] shadow-[0_0_20px_8px_#0044ff] animate-blink" />
-								<div className="md:w-[80px] w-[44px] md:h-[30px] h-[16px] rounded-xl bg-[#0044ff] shadow-[0_0_20px_8px_#0044ff] animate-blink" />
+							<div className="flex gap-[30px] absolute mr-[50px]">
+								<div className="md:w-[80px] w-[60px] md:h-[30px] h-[20px] rounded-xl bg-[#0044ff] shadow-[0_0_20px_8px_#0044ff] animate-blink" />
+								<div className="md:w-[80px] w-[60px] md:h-[30px] h-[20px] rounded-xl bg-[#0044ff] shadow-[0_0_20px_8px_#0044ff] animate-blink" />
 							</div>
 							<Image
 								src={ambulance}
 								alt="Машина скорой помощи MedSkill"
 								priority
-								className="drop-shadow-[0_20px_30px_rgba(0,0,0,0.25)] w-full h-auto"
+								className="drop-shadow-[0_20px_30px_rgba(0,0,0,0.25)]"
 							/>
 						</div>
 					</div>
