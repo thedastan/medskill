@@ -12,8 +12,6 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service, location }: ServiceCardProps) => {
-	const extra = service.descriptions.length - 3;
-
 	return (
 		<Link
 			href={`/${service.slug}`}
@@ -39,23 +37,22 @@ const ServiceCard = ({ service, location }: ServiceCardProps) => {
 				</h3>
 			</div>
 
-			{/* Description list */}
+			{/* Tags — ключевые слова / что входит / случаи */}
 			<div className="p-5 md:p-6 flex flex-col gap-4 flex-1">
-				<ul className="flex flex-col gap-2.5 flex-1">
-					{service.descriptions.slice(0, 3).map((el) => (
-						<li
+				<div className="flex flex-wrap gap-2 flex-1 content-start">
+					{service.descriptions.slice(0, 5).map((el) => (
+						<span
 							key={el.description}
-							className="flex items-start gap-2.5 text-[#444] text-[14px] md:text-[15px] leading-snug">
-							<span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-[#16AEC0] shrink-0" />
+							className="inline-flex items-center bg-[#e6f9fc] text-[#0a7d8c] text-[14px] md:text-[15px] font-[500] px-3.5 py-2 rounded-[10px] border border-[#16AEC0]/20">
 							{el.description}
-						</li>
+						</span>
 					))}
-					{extra > 0 && (
-						<li className="text-[#16AEC0]/80 text-[13px] font-[500] pl-4">
-							и ещё {extra}…
-						</li>
+					{service.descriptions.length > 5 && (
+						<span className="inline-flex items-center bg-[#16AEC0] text-white text-[14px] md:text-[15px] font-[600] px-3.5 py-2 rounded-[10px]">
+							+{service.descriptions.length - 5} ещё
+						</span>
 					)}
-				</ul>
+				</div>
 
 				{/* CTA — Подробнее */}
 				<div className="flex items-center gap-1.5 text-[#16AEC0] font-[600] text-[15px] group-hover:gap-3 transition-all mt-1">
