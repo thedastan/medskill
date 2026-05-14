@@ -2,6 +2,12 @@ import { SITE_URL } from "@/lib/site";
 
 const TELEGRAM_API = "https://api.telegram.org";
 
+// In-memory счётчик заявок. На Vercel живёт между запросами благодаря
+// Fluid Compute, сбрасывается при холодном старте инстанса. Для 100%
+// последовательности нужна персистентная KV (Vercel KV / Upstash).
+let leadCounter = 0;
+const nextLeadNumber = () => ++leadCounter;
+
 export interface LeadPayload {
 	name: string;
 	phone: string;
@@ -39,16 +45,16 @@ export async function sendLeadToTelegram(lead: LeadPayload): Promise<void> {
 	const phoneTel = telDigits(lead.phone);
 	const phoneWa = waNumber(lead.phone);
 
+	const number = nextLeadNumber();
+
 	const lines = [
-		"🚑 <b>Новая заявка с сайта medskill.com.kg</b>",
+		`🚑 <b>Заявка №${number}</b> — medskill.com.kg`,
 		"",
 		`👤 <b>Имя:</b> ${escapeHtml(lead.name)}`,
 		`📞 <b>Телефон:</b> ${phoneDisplay}`,
 	];
 	if (lead.trafficSource)
 		lines.push(`🎯 <b>Источник:</b> ${escapeHtml(lead.trafficSource)}`);
-	if (lead.source) lines.push(`<b>Откуда (форма):</b> ${escapeHtml(lead.source)}`);
-	if (lead.url) lines.push(`<b>Страница:</b> ${escapeHtml(lead.url)}`);
 	lines.push(
 		"",
 		`🕐 ${new Date().toLocaleString("ru-RU", { timeZone: "Asia/Bishkek" })}`
