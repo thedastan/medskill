@@ -55,10 +55,6 @@ export async function sendLeadToTelegram(lead: LeadPayload): Promise<void> {
 	];
 	if (lead.trafficSource)
 		lines.push(`🎯 <b>Источник:</b> ${escapeHtml(lead.trafficSource)}`);
-	lines.push(
-		"",
-		`🕐 ${new Date().toLocaleString("ru-RU", { timeZone: "Asia/Bishkek" })}`
-	);
 
 	const replyMarkup = {
 		inline_keyboard: [
