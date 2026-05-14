@@ -156,6 +156,7 @@ const LeadForm = ({ source = "hero", className = "" }: LeadFormProps) => {
 					name: name.trim(),
 					phone: fullPhone,
 					source: `${source}/${country.id}`,
+					referrer: typeof document !== "undefined" ? document.referrer : "",
 				}),
 			});
 

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendLeadToTelegram } from "@/lib/telegram";
+import { detectTrafficSource } from "@/lib/traffic-source";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json({ error: "invalid_body" }, { status: 400 });
 	}
 
-	const { name, phone, source } = body as Record<string, unknown>;
+	const { name, phone, source, referrer } = body as Record<string, unknown>;
 
 	if (typeof name !== "string" || typeof phone !== "string") {
 		return NextResponse.json({ error: "missing_fields" }, { status: 400 });
@@ -53,13 +54,22 @@ export async function POST(req: NextRequest) {
 	}
 	ipLastSubmit.set(ip, now);
 
+	const pageUrl = req.headers.get("referer");
+	const refererFromClient =
+		typeof referrer === "string" ? referrer.slice(0, 500) : null;
+	const trafficSource = detectTrafficSource({
+		pageUrl,
+		referrer: refererFromClient,
+	});
+
 	try {
 		await sendLeadToTelegram({
 			name: trimmedName,
 			phone: trimmedPhone,
 			source: typeof source === "string" ? source.slice(0, 50) : undefined,
+			trafficSource,
 			userAgent: req.headers.get("user-agent") ?? undefined,
-			url: req.headers.get("referer") ?? undefined,
+			url: pageUrl ?? undefined,
 		});
 	} catch (err) {
 		console.error("[lead] telegram send failed:", err);

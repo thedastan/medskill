@@ -6,6 +6,7 @@ export interface LeadPayload {
 	name: string;
 	phone: string;
 	source?: string;
+	trafficSource?: string;
 	userAgent?: string;
 	url?: string;
 }
@@ -44,8 +45,9 @@ export async function sendLeadToTelegram(lead: LeadPayload): Promise<void> {
 		`👤 <b>Имя:</b> ${escapeHtml(lead.name)}`,
 		`📞 <b>Телефон:</b> ${phoneDisplay}`,
 	];
-	if (lead.source)
-		lines.push(`<b>Откуда:</b> ${escapeHtml(lead.source)}`);
+	if (lead.trafficSource)
+		lines.push(`🎯 <b>Источник:</b> ${escapeHtml(lead.trafficSource)}`);
+	if (lead.source) lines.push(`<b>Откуда (форма):</b> ${escapeHtml(lead.source)}`);
 	if (lead.url) lines.push(`<b>Страница:</b> ${escapeHtml(lead.url)}`);
 	lines.push(
 		"",
