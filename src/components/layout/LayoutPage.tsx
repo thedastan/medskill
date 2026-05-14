@@ -13,8 +13,8 @@ interface LayoutPageProps {
 
 const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
   return (
-    <div className={scss.LayoutPage}>
-      <main className="pb-[88px] md:pb-0">{children}</main>
+    <div className={`${scss.LayoutPage} pb-[88px] md:pb-0`}>
+      <main>{children}</main>
       <Footer />
       <Modal />
       <StickyCta />
