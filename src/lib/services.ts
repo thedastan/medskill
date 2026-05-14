@@ -1,11 +1,11 @@
 // lib/services.ts
 
 import { PHONE_PRIMARY, formatPhone } from "@/config/contacts";
-import img1 from "@/assets/img/transportirovka-sanaviatsiya.png";
-import img2 from "@/assets/img/soprovozhdenie-meropriyatiya.png";
-import img3 from "@/assets/img/kapelnici-na-domu.png";
+import img1 from "@/assets/img/reanimobile-brand.jpg";
+import img2 from "@/assets/img/ambulance-night.jpg";
+import img3 from "@/assets/img/ambulance-interior.jpg";
 import img4 from "@/assets/img/vysov-uzkih-specialistov.png";
-import img5 from "@/assets/img/srochnie-vizovi.png";
+import img5 from "@/assets/img/ambulance-pair.jpg";
 
 export const services = [
 	{

@@ -7,6 +7,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
+import LeadForm from "@/components/ui/form/LeadForm";
 import {
 	PHONE_PRIMARY,
 	PHONE_SECONDARY,
@@ -83,51 +84,65 @@ const channelFromHref = (follow: string): ContactChannel => {
 
 const Contact = () => {
 	return (
-		<section className="bg-[#f3feff] md:py-[50px] py-[20px]">
+		<section className="bg-[#f3feff] md:py-[60px] py-[30px]">
 			<div className="container">
-				<div className="w-full flex md:justify-start justify-center">
-					<h1 className=" text-[#00a1b4] font-[600] text-[34px] md:py-[60px] py-8">
+				<div className="w-full text-center md:text-left mb-8 md:mb-12">
+					<h2 className="text-[#00a1b4] font-[700] text-[28px] md:text-[40px] leading-tight">
 						Наши контакты
-					</h1>
+					</h2>
+					<p className="text-[#00a1b4]/70 text-[15px] md:text-[17px] mt-2">
+						Звоните, пишите или оставьте заявку — выйдем на связь сразу
+					</p>
 				</div>
-				<div className="flex flex-col w-full max-w-[480px] mx-auto md:mx-0 gap-[20px] md:gap-[24px] bg-[#e9fdff] p-[40px] md:p-[50px] rounded-[40px] md:rounded-[50px] shadow-[0_4px_19px_-3px_rgba(0,0,0,0.15)]">
-					{data.map((el) => {
-						const channel = channelFromHref(el.follow);
-						const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-							if (channel === "phone") {
-								e.preventDefault();
-								reportPhoneConversion(el.follow);
-								return;
-							}
-							trackEvent("contact_click", {
-								channel,
-								location: "contact_block",
-							});
-						};
-						return (
-							<Link
-								href={el.follow}
-								key={`${el.id}-${el.follow}`}
-								target={"_blank"}
-								onClick={onClick}
-								className="flex items-center gap-[20px]">
-								<h1 className="text-[#00a1b4] text-[28px]">{el.icon}</h1>
-								<p className="md:text-[19px] text-[17px] text-[#00a1b4]">
-									{el.text}
-								</p>
-							</Link>
-						);
-					})}
 
-					<a
-						href={TEL_HREF(PHONE_PRIMARY)}
-						onClick={(e) => {
-							e.preventDefault();
-							reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
-						}}
-						className="bg-[#16AEC0] hover:bg-[#0a9bb4] flex justify-center items-center w-full h-[60px] text-[18px] text-white font-[600] rounded-[14px] shadow-[0_4px_14px_-4px_rgba(22,174,192,0.5)] active:scale-[0.98] transition-all mt-2">
-						Позвонить сейчас
-					</a>
+				<div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
+					{/* Контакты слева */}
+					<div className="flex flex-col gap-[18px] bg-[#e9fdff] p-[28px] md:p-[40px] rounded-[28px] md:rounded-[36px] shadow-[0_4px_19px_-3px_rgba(0,0,0,0.1)]">
+						{data.map((el) => {
+							const channel = channelFromHref(el.follow);
+							const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+								if (channel === "phone") {
+									e.preventDefault();
+									reportPhoneConversion(el.follow);
+									return;
+								}
+								trackEvent("contact_click", {
+									channel,
+									location: "contact_block",
+								});
+							};
+							return (
+								<Link
+									href={el.follow}
+									key={`${el.id}-${el.follow}`}
+									target={"_blank"}
+									onClick={onClick}
+									className="flex items-center gap-4 group">
+									<span className="flex items-center justify-center w-11 h-11 rounded-full bg-white text-[#00a1b4] text-[20px] shadow-sm group-hover:bg-[#16AEC0] group-hover:text-white transition-colors shrink-0">
+										{el.icon}
+									</span>
+									<p className="md:text-[17px] text-[15px] text-[#00a1b4] font-[500] group-hover:underline">
+										{el.text}
+									</p>
+								</Link>
+							);
+						})}
+
+						<a
+							href={TEL_HREF(PHONE_PRIMARY)}
+							onClick={(e) => {
+								e.preventDefault();
+								reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
+							}}
+							className="bg-[#16AEC0] hover:bg-[#0a9bb4] flex justify-center items-center w-full h-[56px] text-[17px] text-white font-[600] rounded-[12px] shadow-[0_4px_14px_-4px_rgba(22,174,192,0.5)] active:scale-[0.98] transition-all mt-2">
+							Позвонить сейчас
+						</a>
+					</div>
+
+					{/* Форма справа */}
+					<div className="md:sticky md:top-4">
+						<LeadForm source="contacts" className="!max-w-none w-full" />
+					</div>
 				</div>
 			</div>
 		</section>
