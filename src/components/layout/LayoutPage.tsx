@@ -5,6 +5,7 @@ import scss from "../layout/LayoutPage.module.scss";
 import Footer from "./footer/Footer";
 import Modal from "../pages/modal/Modal";
 import ScrollTracker from "../analytics/ScrollTracker";
+import ServiceWorkerRegistrar from "../analytics/ServiceWorkerRegistrar";
 import StickyCta from "./StickyCta";
 
 interface LayoutPageProps {
@@ -19,6 +20,7 @@ const LayoutPage: FC<LayoutPageProps> = ({ children }) => {
       <Modal />
       <StickyCta />
       <ScrollTracker />
+      <ServiceWorkerRegistrar />
     </div>
   );
 };

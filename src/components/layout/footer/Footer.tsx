@@ -147,7 +147,7 @@ const Footer = () => {
 						<p>© {year} ОсОО «МедСкилл» · ИНН 02608202110272</p>
 					</div>
 					<Link
-						href="https://instagram.com/dastan.mukeev"
+						href="https://wa.me/996559692626"
 						target="_blank"
 						rel="noopener noreferrer"
 						className="hover:text-white hover:underline">
