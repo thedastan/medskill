@@ -62,11 +62,13 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: SITE_URL,
 	},
-	icons: {
-		icon: "/favicon.ico",
-		apple: "/logo192.png",
+	// icons и manifest автоматически генерируются Next App Router из
+	// app/icon.tsx, app/apple-icon.tsx и app/manifest.ts
+	appleWebApp: {
+		title: "MedSkill",
+		statusBarStyle: "default",
+		capable: true,
 	},
-	manifest: "/manifest.json",
 };
 
 export const viewport: Viewport = {
