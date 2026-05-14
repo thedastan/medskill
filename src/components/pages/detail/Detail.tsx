@@ -11,6 +11,7 @@ import { services } from "@/lib/services";
 import { SlArrowLeft } from "react-icons/sl";
 import { useEffect } from "react";
 import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
+import LeadForm from "@/components/ui/form/LeadForm";
 
 interface DetailProps {
   slug: string;
@@ -83,13 +84,19 @@ const Detail = ({ slug }: DetailProps) => {
                 );
               })}
             </div>
+
+            <div className="mt-8">
+              <LeadForm source={`detail/${slug}`} className="!shadow-md" />
+            </div>
           </div>
         </div>
 
         {/* Другие услуги */}
-        <Title className="text-start pb-10 mt-20">Наши услуги</Title>
+        <Title className="text-start pb-10 mt-20">Другие услуги</Title>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 w-full pb-10">
-          {services?.map((srv) => (
+          {services
+            .filter((srv) => srv.slug !== slug)
+            .map((srv) => (
             <Link
               href={`/${srv.slug}`}
               key={srv.slug}
