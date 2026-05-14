@@ -1,6 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
+import {
+	PHONE_PRIMARY,
+	TEL_HREF,
+	formatPhoneSpaces,
+} from "@/config/contacts";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -192,13 +197,13 @@ const LeadForm = ({ source = "hero", className = "" }: LeadFormProps) => {
 						<p className="text-[#555] text-[14px] mt-1 leading-snug">
 							Перезвоним в течение 2 минут. Если срочно — звоните:{" "}
 							<a
-								href="tel:+996700333636"
+								href={TEL_HREF(PHONE_PRIMARY)}
 								onClick={(e) => {
 									e.preventDefault();
-									reportPhoneConversion("tel:+996700333636");
+									reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
 								}}
 								className="text-[#0a9bb4] font-[600] underline">
-								+996 700 333 636
+								{formatPhoneSpaces(PHONE_PRIMARY)}
 							</a>
 						</p>
 					</div>

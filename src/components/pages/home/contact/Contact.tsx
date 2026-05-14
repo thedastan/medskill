@@ -7,50 +7,62 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { RiWhatsappFill } from "react-icons/ri";
 import { reportPhoneConversion, trackEvent } from "@/lib/gtag";
+import {
+	PHONE_PRIMARY,
+	PHONE_SECONDARY,
+	PHONE_TERTIARY,
+	WHATSAPP_URL,
+	TELEGRAM_LINK,
+	INSTAGRAM_LINK,
+	ADDRESS_LINE,
+	ADDRESS_MAP_URL,
+	CITY,
+	TEL_HREF,
+	formatPhone,
+} from "@/config/contacts";
 
 const data = [
 	{
-		id: 1,
+		id: "p1",
 		icon: <BsFillTelephoneFill />,
-		text: "+996 (552) 333 636",
-		follow: "tel:+996552333636",
+		text: formatPhone(PHONE_SECONDARY),
+		follow: TEL_HREF(PHONE_SECONDARY),
 	},
 	{
-		id: 2,
+		id: "p2",
 		icon: <BsFillTelephoneFill />,
-		text: "+996 (700) 333 636",
-		follow: "tel:+996700333636",
+		text: formatPhone(PHONE_PRIMARY),
+		follow: TEL_HREF(PHONE_PRIMARY),
 	},
 	{
-		id: 3,
+		id: "p3",
 		icon: <BsFillTelephoneFill />,
-		text: "+996 (776) 333 636",
-		follow: "tel:+996776333636",
+		text: formatPhone(PHONE_TERTIARY),
+		follow: TEL_HREF(PHONE_TERTIARY),
 	},
 	{
-		id: 4,
+		id: "loc",
 		icon: <FaLocationDot />,
-		text: "Кыргызстан, г. Бишкек, ул. Ахунбаева 2/1",
-		follow:
-			"https://www.google.com/maps/place/2+%D1%83%D0%BB.+%D0%90%D1%85%D1%83%D0%BD%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0,+%D0%91%D0%B8%D1%88%D0%BA%D0%B5%D0%BA/@42.841181,74.6298258,17z/data=!3m1!4b1!4m5!3m4!1s0x389eb66691f68657:0xf750797880b0316f!8m2!3d42.841181!4d74.6320145",
+		text: `Кыргызстан, г. ${CITY}, ${ADDRESS_LINE}`,
+		follow: ADDRESS_MAP_URL,
 	},
 	{
-		id: 5,
+		id: "wa",
 		icon: <RiWhatsappFill />,
 		text: "Наш WhatsApp",
-		follow: "https://wa.me/+996700333636",
+		follow: WHATSAPP_URL,
 	},
 	{
-		id: 6,
+		id: "tg",
 		icon: <FaTelegramPlane />,
 		text: "Наш Telegram",
-		follow: "https://t.me/+996550822451",
+		follow: TELEGRAM_LINK,
 	},
 	{
-		id: 7,
+		id: "ig",
 		icon: <AiFillInstagram />,
 		text: "Наш Instagram",
-		follow: "https://www.instagram.com/med.skill.kg/",
+		follow: INSTAGRAM_LINK,
 	},
 ];
 
@@ -110,10 +122,10 @@ const Contact = () => {
 
 						<div className="flex items-center justify-center">
 							<a
-								href="tel:+996700333636"
+								href={TEL_HREF(PHONE_PRIMARY)}
 								onClick={(e) => {
 									e.preventDefault();
-									reportPhoneConversion("tel:+996700333636");
+									reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
 								}}
 								className="bg-[#f0f0f0] flex justify-center items-center w-[100%] md:w-[100%] h-[70px] text-[20px] text-[#00a1b4] font-[600] rounded-[15px] shadow-[inset_-2px_-2px_4px_rgba(0,0,0,0.2),_inset_3px_4px_10px_#ffffff]">
 								Позвонить сейчас

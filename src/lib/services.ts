@@ -1,5 +1,6 @@
 // lib/services.ts
 
+import { PHONE_PRIMARY, formatPhone } from "@/config/contacts";
 import img1 from "@/assets/img/transportirovka-sanaviatsiya.png";
 import img2 from "@/assets/img/soprovozhdenie-meropriyatiya.png";
 import img3 from "@/assets/img/kapelnici-na-domu.png";
@@ -17,7 +18,7 @@ export const services = [
 			{ description: "По регионам" },
 			{ description: "По всей СНГ" },
 		],
-		contact: [{ phone: "+996 (700) 333 636" }],
+		contact: [{ phone: formatPhone(PHONE_PRIMARY) }],
 		image: img1,
 	},
 
@@ -32,7 +33,7 @@ export const services = [
 			{ description: "Корпоративы" },
 			{ description: "Траурные мероприятия" },
 		],
-		contact: [{ phone: "+996 (700) 333 636" }],
+		contact: [{ phone: formatPhone(PHONE_PRIMARY) }],
 		image: img2,
 	},
 
@@ -48,7 +49,7 @@ export const services = [
 			{ description: "Снятие дискомфорта" },
 			{ description: "Общая поддержка состояния" },
 		],
-		contact: [{ phone: "+996 (700) 333 636" }],
+		contact: [{ phone: formatPhone(PHONE_PRIMARY) }],
 		image: img3,
 	},
 
@@ -65,7 +66,7 @@ export const services = [
 		  { description: "Специалист по травмам" },
 		  { description: "Специалист по урологии" },
 		],
-		contact: [{ phone: "+996 (700) 333 636" }],
+		contact: [{ phone: formatPhone(PHONE_PRIMARY) }],
 		image: img4,
 	  },
 	{
@@ -81,7 +82,7 @@ export const services = [
 			{ description: "Пищевые реакции" },
 			{ description: "Неприятные состояния" },
 		],
-		contact: [{ phone: "+996 (700) 333 636" }],
+		contact: [{ phone: formatPhone(PHONE_PRIMARY) }],
 		image: img5,
 	},
 ];

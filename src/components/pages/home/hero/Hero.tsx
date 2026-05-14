@@ -14,6 +14,7 @@ import Svg4 from "@/assets/svg/svg4";
 import LeadForm from "@/components/ui/form/LeadForm";
 import { reportPhoneConversion } from "@/lib/gtag";
 import { LuPhone } from "react-icons/lu";
+import { PHONE_PRIMARY, TEL_HREF, formatPhone } from "@/config/contacts";
 
 const trustCards = [
 	{ icon: <Svg1 />, title: "Работаем круглосуточно 24/7" },
@@ -78,14 +79,14 @@ const Hero = () => {
 
 						{/* Альтернативный CTA — звонок, только десктоп */}
 						<a
-							href="tel:+996700333636"
+							href={TEL_HREF(PHONE_PRIMARY)}
 							onClick={(e) => {
 								e.preventDefault();
-								reportPhoneConversion("tel:+996700333636");
+								reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
 							}}
 							className="hidden md:inline-flex items-center gap-2 text-white/95 hover:text-white text-[15px] font-[500] underline-offset-4 hover:underline transition-colors">
 							<LuPhone className="text-[18px]" />
-							или позвоните: +996 (700) 333 636
+							или позвоните: {formatPhone(PHONE_PRIMARY)}
 						</a>
 					</div>
 

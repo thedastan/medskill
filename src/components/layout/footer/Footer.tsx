@@ -4,6 +4,7 @@ import logo2 from "@/assets/img/Med Skill.png";
 import Image from "next/image";
 import Link from "next/link";
 import { reportPhoneConversion } from "@/lib/gtag";
+import { PHONE_PRIMARY, TEL_HREF, formatPhone } from "@/config/contacts";
 
 const Footer = () => {
 	return (
@@ -19,25 +20,27 @@ const Footer = () => {
 					</h3>
 
 					<Link
-						href="tel:+996700333636"
+						href={TEL_HREF(PHONE_PRIMARY)}
 						onClick={(e) => {
 							e.preventDefault();
-							reportPhoneConversion("tel:+996700333636");
+							reportPhoneConversion(TEL_HREF(PHONE_PRIMARY));
 						}}
 						className="md:text-[32px] text-[18px] text-white">
-						+996 (700) 333 636
+						{formatPhone(PHONE_PRIMARY)}
 					</Link>
 				</div>
 
 				<div className=" md:flex-row flex-col gap-4 border-t border-white flex items-center justify-between pt-4">
 					<div>
-					<p className="text-white text-[16px]">ОсОО &quot;МедСкилл&quot;</p>
-					<p className="text-white text-[16px]">ИНН 02608202110272</p>
-				</div>
+						<p className="text-white text-[16px]">ОсОО &quot;МедСкилл&quot;</p>
+						<p className="text-white text-[16px]">ИНН 02608202110272</p>
+					</div>
 
-				<Link href="https://instagram.com/dastan.mukeev" target="_blank">
-					<p className="text-white text-[16px]">Разработал: ИП Мукеев Дастан Ракымович</p>
-				</Link>
+					<Link href="https://instagram.com/dastan.mukeev" target="_blank">
+						<p className="text-white text-[16px]">
+							Разработал: ИП Мукеев Дастан Ракымович
+						</p>
+					</Link>
 				</div>
 			</div>
 		</footer>

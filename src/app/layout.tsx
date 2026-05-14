@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import "@/styles/globals.scss";
 import LayoutPage from "@/components/layout/LayoutPage";
+import { SITE_URL } from "@/lib/site";
 
 const geistSans = localFont({
 	src: "./fonts/GeistVF.woff",
@@ -14,8 +15,6 @@ const geistMono = localFont({
 	variable: "--font-geist-mono",
 	weight: "100 900",
 });
-
-const SITE_URL = "https://www.medskill.com.kg";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),

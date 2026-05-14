@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import Detail from "@/components/pages/detail/Detail";
 import { services } from "@/lib/services";
 import StructuredData from "@/lib/StructuredData";
-
-const SITE_URL = "https://www.medskill.com.kg";
+import { SITE_URL } from "@/lib/site";
 
 interface Params {
 	slug: string;

@@ -1,20 +1,19 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/services";
-
-const SITE = "https://www.medskill.com.kg";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const now = new Date();
 
 	return [
 		{
-			url: `${SITE}/`,
+			url: `${SITE_URL}/`,
 			lastModified: now,
 			changeFrequency: "weekly",
 			priority: 1.0,
 		},
 		...services.map((s) => ({
-			url: `${SITE}/${s.slug}`,
+			url: `${SITE_URL}/${s.slug}`,
 			lastModified: now,
 			changeFrequency: "monthly" as const,
 			priority: 0.8,

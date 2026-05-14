@@ -1,5 +1,6 @@
+import { SITE_URL } from "@/lib/site";
+
 const TELEGRAM_API = "https://api.telegram.org";
-const SITE_URL = "https://www.medskill.com.kg";
 
 export interface LeadPayload {
 	name: string;
